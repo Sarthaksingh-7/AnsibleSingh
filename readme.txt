@@ -1,65 +1,60 @@
-this is ansible server virtual machine which will be our ansible configration manager tool server
+this is node server 
 
+username: Sarthakuser
 
-username:sarthakuser
+private key is in the repo
 
+here are virtual machine details that is deployed machine  
 
-here are details 
-
-Operating system:Linux (centos 7.9.2009)
+Operating system:Linux (ubuntu 20.04)
 
 Size:Standard D2s v3 (2 vcpus, 8 GiB memory)
 
-Public IP address:20.98.222.38
+Public IP address:104.46.97.254
 
 Virtual network/subnet:Ansiblelab-RG-vnet/default
 
-JSON VIEW
-
-
+JSON view
 {
-    "name": "Ansibleserver",
-    "id": "/subscriptions/aa1d9d6b-9e96-41b7-91b3-012dc82be976/resourceGroups/Ansiblelab-RG/providers/Microsoft.Compute/virtualMachines/Ansibleserver",
+    "name": "Nodevmubuntu",
+    "id": "/subscriptions/aa1d9d6b-9e96-41b7-91b3-012dc82be976/resourceGroups/Ansiblelab-RG/providers/Microsoft.Compute/virtualMachines/Nodevmubuntu",
     "type": "Microsoft.Compute/virtualMachines",
     "location": "eastus2",
-    "tags": {
-        "Config Manager ": "Ansibleserver"
-    },
     "properties": {
-        "vmId": "7f54ce0c-42cd-4342-9016-2687511eb1d9",
+        "vmId": "a3ef1e9f-5d44-44aa-afc0-d3636a686188",
         "hardwareProfile": {
             "vmSize": "Standard_D2s_v3"
         },
         "storageProfile": {
             "imageReference": {
-                "publisher": "OpenLogic",
-                "offer": "CentOS",
-                "sku": "7_9",
+                "publisher": "canonical",
+                "offer": "0001-com-ubuntu-server-focal",
+                "sku": "20_04-lts",
                 "version": "latest"
             },
             "osDisk": {
                 "osType": "Linux",
-                "name": "Ansibleserver_OsDisk_1_f7bbd61635ce4788b3ccd3d3244aa2fd",
+                "name": "Nodevmubuntu_disk1_92bb7c43d8a840d490e9ffcd5efeaed7",
                 "createOption": "FromImage",
                 "caching": "ReadWrite",
                 "managedDisk": {
                     "storageAccountType": "Premium_LRS",
-                    "id": "/subscriptions/aa1d9d6b-9e96-41b7-91b3-012dc82be976/resourceGroups/Ansiblelab-RG/providers/Microsoft.Compute/disks/Ansibleserver_OsDisk_1_f7bbd61635ce4788b3ccd3d3244aa2fd"
+                    "id": "/subscriptions/aa1d9d6b-9e96-41b7-91b3-012dc82be976/resourceGroups/Ansiblelab-RG/providers/Microsoft.Compute/disks/Nodevmubuntu_disk1_92bb7c43d8a840d490e9ffcd5efeaed7"
                 },
                 "diskSizeGB": 30
             },
             "dataDisks": []
         },
         "osProfile": {
-            "computerName": "Ansibleserver",
-            "adminUsername": "sarthakuser",
+            "computerName": "Nodevmubuntu",
+            "adminUsername": "Sarthakuser",
             "linuxConfiguration": {
                 "disablePasswordAuthentication": true,
                 "ssh": {
                     "publicKeys": [
                         {
-                            "path": "/home/sarthakuser/.ssh/authorized_keys",
-                            "keyData": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCqpLd5KJih7/ydYyX5P/vboYnh\r\nBhpkJNZslh94spqoq+i0ShS55Qq/Dvvg28Oc6gF7hbyfm+y7HK1b2uCLkdywNW0q\r\n2kUC45HsRivKwjtGMHYhs53c1LbIGSSukigBR3pqicTHWXbr23NqCM+hJGV6MGCQ\r\n2Un7VI/2c5BkMksRQOCuZBwKm67++zJm0o4uuSrMOM84Tq0geu/B0lSJfYnWxwh7\r\nK97yi6gCJv1TegoRWs48FOTO4Rl2L8bq21q0hdDVBEOqNaH1g1447FTwcxcRmN3s\r\nrPirFTPnPmMuC/TfTy3oZqeVudO19OisgZIEnhEq5lixat1Ux8nH+tsAt6YJySfW\r\nRwVI8zgWENqQQkT/EL10AdAqWtKOdU845vd2wxckqpsI+VzdL9l5MEWvaCDjNyIE\r\nRl+y3VPxeE6oBKyGHJwpxif9wYOKOA1QORqRjfNTtfpzfIO9pkrI9FJnqyrP3Pr7\r\ngEqMlQoF5CUr/SO++yRlfXgvrx7x6TICbvc+N1M= generated-by-azure\r\n"
+                            "path": "/home/Sarthakuser/.ssh/authorized_keys",
+                            "keyData": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCjp7zdyoVGbRCCoLD2ptMM01ya\r\np16scF+bDdA68cBsP0lhPFefW1319gZjW7OogXtzudxx45C12Pb87U9P3Y7Crnjx\r\nt4P29UDBbGPypp3s8SlXVrZkOuIQTLqjzFp8pwgTXTM/Cp8rI6m4wrS1rywenxs/\r\n4h7FHsafCqB10BEsNRF8eAvCAb3/fUlJ7it8aZZR1wmkmY/GYOV/HD6h5la0ta82\r\npP0NDA8CLKFJIC9LHqdPRxEH3E5jB+v4J23QmkUdfAWFa1bz3XJKQHzmB91q6NZ0\r\ngXKWThGNztuLOFvT64DidTDsHV+LnHMcKNCRdBo2nHCiFKlQ+S73BsKSrna7UKxQ\r\nYUDuwPl8pXctnD8zT6XkNf0FdhU96f369TiseOsw/e1d8w1xET5yYXTk7LTHNCx5\r\nWrXuVOumuGhlnJ2dpoaRN3slayMePPIZaoXCsgyva1kHVlxtW3V+Q8G7ZAZGj7cf\r\nszPsnuHu9+MD/xiKmfiqjpAqxUSQHTIZ5M+7Y5M= generated-by-azure\r\n"
                         }
                     ]
                 }
@@ -69,7 +64,7 @@ JSON VIEW
         "networkProfile": {
             "networkInterfaces": [
                 {
-                    "id": "/subscriptions/aa1d9d6b-9e96-41b7-91b3-012dc82be976/resourceGroups/Ansiblelab-RG/providers/Microsoft.Network/networkInterfaces/ansibleserver587"
+                    "id": "/subscriptions/aa1d9d6b-9e96-41b7-91b3-012dc82be976/resourceGroups/Ansiblelab-RG/providers/Microsoft.Network/networkInterfaces/nodevmubuntu266"
                 }
             ]
         },
