@@ -1,0 +1,47 @@
+--- #Docker YAML Installing Docker, the container runtime;
+#Installing apt-transport-https, allowing you to add external HTTPS sources to the APT source list;
+#Adding the apt key of the Kubernetes APT repository for key verification;
+#Adding the Kubernetes APT repository to the remote server APT sources list;
+#Installing Kubelet and Kubeadm
+- hosts: demo
+  user: ansibleusr1
+  become: yes
+  connection: ssh
+  tasks:
+ - name: install Docker
+ 	apt:
+  	 name: docker.io
+ 	 state: present
+  	 update_cache: true
+ 
+ - name: install APT Transport HTTPS
+ 	apt:
+  	 name: apt-transport-https
+  	 state: present
+ 
+ - name: add Kubernetes apt-key
+ 	apt_key:
+ 	 url: https://packages.cloud.google.com/apt/doc/apt-key.gpg
+  	 state: present
+ 
+ - name: add Kubernetes' APT repository
+	 apt_repository:
+ 	  repo: deb http://apt.kubernetes.io/ kubernetes-xenial main
+ 	  state: present
+	  filename: 'kubernetes'
+ 
+ - name: install kubelet
+ 	apt:
+  	 name: kubelet
+ 	 state: present
+ 	 update_cache: true
+ 
+ - name: install kubeadm
+ 	apt:
+ 	 name: kubeadm
+ 	 state: present
+ 
+ - name: install kubectl
+ 	apt:
+  	 name: kubectl
+  	 state: present

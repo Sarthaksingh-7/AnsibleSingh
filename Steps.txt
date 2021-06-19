@@ -1,0 +1,3 @@
+Ansible server :
+ switching user from sarthakuser to root user
+	sudo su
